@@ -25,6 +25,8 @@ if SERVER then
     ]]--
     
     function FillClips(ply, wep)
+        if not wep:HasAmmo() or wep:GetMaxClip1() == 1 then return end -- prevent most op weapons
+        
         if wep:Clip1() < 255 then 
             wep:SetClip1(250) 
         end
