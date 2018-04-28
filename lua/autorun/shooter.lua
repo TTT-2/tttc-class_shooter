@@ -1,9 +1,11 @@
 AddCSLuaFile()
 
-AddCustomClass("SHOOTER", {
-    --color = Color(),
-    name = "shooter"
-})
+hook.Add("TTT2_PreClassesInit", "InitClassShooter", function()
+    AddCustomClass("SHOOTER", {
+        --color = Color(),
+        name = "shooter"
+    })
+end)
 
 hook.Add("TTT2_FinishedClassesSync", "TTT2ClassShooterInit", function(ply, first)
 	if CLIENT and first then -- just on client and first init !
@@ -25,7 +27,7 @@ if SERVER then
     ]]--
     
     function FillClips(ply, wep)
-        if not wep:HasAmmo() or wep:GetMaxClip1() == 1 then return end -- prevent most op weapons
+        if not wep:HasAmmo() or not wep.AutoSpawnable or (wep.Kind == WEAPON_EQUIP1 or wep.Kind == WEAPON_EQUIP2) then return end -- prevent most op weapons
         
         if wep:Clip1() < 255 then 
             wep:SetClip1(250) 
