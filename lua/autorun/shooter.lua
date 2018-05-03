@@ -1,6 +1,6 @@
 AddCSLuaFile()
 
-hook.Add("TTT2_PreClassesInit", "InitClassShooter", function()
+hook.Add("TTTCPreClassesInit", "InitClassShooter", function()
     AddCustomClass("SHOOTER", {
         --color = Color(),
         name = "shooter"
@@ -20,12 +20,6 @@ hook.Add("TTT2_FinishedClassesSync", "TTT2ClassShooterInit", function(ply, first
 end)
 
 if SERVER then
-    --[[
-    hook.Add("TTT2_ReceiveCustomClass", "TTT2ClassShooterSetup", function(ply)
-        --ply:Give("") ...
-    end)
-    ]]--
-    
     function FillClips(ply, wep)
         if not wep:HasAmmo() or not wep.AutoSpawnable or (wep.Kind == WEAPON_EQUIP1 or wep.Kind == WEAPON_EQUIP2) then return end -- prevent most op weapons
         
