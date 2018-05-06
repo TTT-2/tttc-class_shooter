@@ -7,7 +7,7 @@ hook.Add("TTTCPreClassesInit", "InitClassShooter", function()
     })
 end)
 
-hook.Add("TTT2_FinishedClassesSync", "TTT2ClassShooterInit", function(ply, first)
+hook.Add("TTTCFinishedClassesSync", "TTTCClassShooterInit", function(ply, first)
 	if CLIENT and first then -- just on client and first init !
 
 		-- setup here is not necessary but if you want to access the role data, you need to start here
@@ -38,7 +38,7 @@ if SERVER then
         end
     end
     
-    hook.Add("Tick", "TTT2ClassShooterTick", function()
+    hook.Add("Tick", "TTTCClassShooterTick", function()
         for _, ply in pairs(player.GetAll()) do
             if ply:Alive() and ply:GetActiveWeapon() and ply:HasCustomClass() and ply:GetCustomClass() == CLASSES.SHOOTER.index then
                 FillClips(ply, ply:GetActiveWeapon())
