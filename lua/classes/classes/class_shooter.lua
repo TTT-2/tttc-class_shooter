@@ -16,7 +16,7 @@ CLASS.AddClass("SHOOTER", {
 			ply:RemoveArmor(60)
 		end
 	end,
-	lang = {
+	langs = {
 		name = {
 			English = "Shooter"
 		},
