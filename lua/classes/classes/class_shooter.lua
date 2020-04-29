@@ -6,12 +6,12 @@ CLASS.AddClass("SHOOTER", {
 	time = 8,
 	cooldown = 60,
 	avoidWeaponReset = true,
-	onActivate = function(ply)
+	OnAbilityActivate = function(ply)
 		if SERVER then
 			ply:GiveArmor(60)
 		end
 	end,
-	onDeactivate = function(ply)
+	OnAbilityDeactivate = function(ply)
 		if SERVER then
 			ply:RemoveArmor(60)
 		end
