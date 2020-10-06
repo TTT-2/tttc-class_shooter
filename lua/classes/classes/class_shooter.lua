@@ -18,10 +18,12 @@ CLASS.AddClass("SHOOTER", {
 	end,
 	lang = {
 		name = {
-			English = "Shooter"
+			English = "Shooter",
+			Русский = "Стрелок"
 		},
 		desc = {
-			English = "The Shooter has infinite ammo for all common weapons that aren't special. Additionally he can receive 60 armor points for 8 seconds once every minute."
+			English = "The Shooter has infinite ammo for all common weapons that aren't special. Additionally he can receive 60 armor points for 8 seconds once every minute.",
+			Русский = "Стрелок имеет бесконечные боеприпасы для всего обычного оружия, которое особенных. Дополнительно он может получать 60 очков брони каждые 8 секунд каждую минуту."
 		}
 	}
 })
